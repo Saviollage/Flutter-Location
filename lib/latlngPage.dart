@@ -42,18 +42,13 @@ class LatLongPageState extends State<LatLongPage> {
   }
 
   Future<String> getData() async {
-    //PUT YOUR API_KEY HERE
-    String key = '';
+    String key = ''; //PUT YOUR API_KEY HERE
     var response = await http.get(
         Uri.encodeFull(
             "https://maps.googleapis.com/maps/api/geocode/json?key=$key&latlng=${currentLocation['latitude']},${currentLocation['longitude']}"),
         headers: {'Accept': 'application/json'});
-
     if (response.statusCode == 404) {
       if (mounted)
-        this.setState(() {
-          address = {};
-        });
       return 'Error';
     } else {
       if (mounted)
