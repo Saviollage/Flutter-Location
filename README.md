@@ -1,6 +1,6 @@
 # Flutter Location App
 
-Simple location app using flutter. It's possible to get and address using current phone location or searching CEP, using 'api.postmon.com.br'
+Simple location app using flutter. It's possible to get and address using current phone location or searching CEP, using 'api.postmon.com.br' and google maps API
 
 ## Usage
 
