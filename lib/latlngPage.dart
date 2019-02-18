@@ -108,30 +108,34 @@ class LatLongPageState extends State<LatLongPage> {
             SizedBox(
               height: 100,
             ),
-            currentLocation['latitude'] == 0.0 || address.isEmpty
+            currentLocation['latitude'] == 0.0
                 ? SizedBox()
-                : Card(
-                    child: ListTile(
-                      title: Text(address['results'][0]['address_components'][1]
-                                  ['long_name']
-                              .toString() +
-                          ', ' +
-                          address['results'][0]['address_components'][0]
-                                  ['long_name']
-                              .toString() +
-                          ' - ' +
-                          address['results'][0]['address_components'][2]
-                                  ['long_name']
-                              .toString()),
-                      subtitle: Text(address['results'][0]['address_components']
-                                  [3]['long_name']
-                              .toString() +
-                          ', ' +
-                          address['results'][0]['address_components'][4]
-                                  ['short_name']
-                              .toString()),
-                    ),
-                  )
+                : address.isEmpty
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : Card(
+                        child: ListTile(
+                          title: Text(address['results'][0]
+                                      ['address_components'][1]['long_name']
+                                  .toString() +
+                              ', ' +
+                              address['results'][0]['address_components'][0]
+                                      ['long_name']
+                                  .toString() +
+                              ' - ' +
+                              address['results'][0]['address_components'][2]
+                                      ['long_name']
+                                  .toString()),
+                          subtitle: Text(address['results'][0]
+                                      ['address_components'][3]['long_name']
+                                  .toString() +
+                              ', ' +
+                              address['results'][0]['address_components'][4]
+                                      ['short_name']
+                                  .toString()),
+                        ),
+                      )
           ],
         ));
   }

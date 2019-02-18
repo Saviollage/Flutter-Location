@@ -1,16 +1,16 @@
-# location_app
+# Flutter Location App
 
-A new Flutter project.
+Simple location app using flutter. It's possible to get and address using current phone location or searching CEP, using 'api.postmon.com.br' and google maps API
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter application.
+On the file '/lib/latlngPage.dart' put your API_KEY on 'key' variable to validade the route:
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+```dart
+  Future<String> getData() async {
+    
+    String key = '';  //PUT YOUR API_KEY HERE
+...
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```
