@@ -48,7 +48,6 @@ class LatLongPageState extends State<LatLongPage> {
             "https://maps.googleapis.com/maps/api/geocode/json?key=$key&latlng=${currentLocation['latitude']},${currentLocation['longitude']}"),
         headers: {'Accept': 'application/json'});
     if (response.statusCode == 404) {
-      if (mounted)
       return 'Error';
     } else {
       if (mounted)
